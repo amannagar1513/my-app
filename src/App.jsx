@@ -23,9 +23,9 @@ function App() {
         <Route path="/" element={<Hero />} />
         <Route path="/services" element={<Services />} />
         <Route path="/about" element={<About />} />
-        <Route path="/PayPerCall" element={<PayPerCall />} />
-        <Route path="/Advertisers" element={<Advertisers />} />
-        <Route path="/Publishers" element={<Publishers />} />
+        <Route path="/paypercall" element={<PayPerCall />} />
+        <Route path="/advertisers" element={<Advertisers />} />
+        <Route path="/publishers" element={<Publishers />} />
       </Routes>
 
       <Footer />
