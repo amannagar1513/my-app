@@ -1,15 +1,15 @@
 // App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './Header';
-import Footer from './Footer';
-import Hero from './Hero';
-import Services from './Services';
-import About from './About';
-import PayPerCall from './PayPerCall';
-import Advertisers from './Advertisers';
-import Publishers from './Publishers';
-import PopupForm from './PopupForm'; // PopupForm import
+import Header from './Header.jsx';
+import Footer from './Footer.jsx';
+import Hero from './Hero.jsx';
+import Services from './Services.jsx';
+import About from './About.jsx';
+import PayPerCall from './PayPerCall.jsx';
+import Advertisers from './Advertisers.jsx';
+import Publishers from './Publishers.jsx';
+import PopupForm from './PopupForm.jsx'; // PopupForm import
 
 function App() {
   return (
