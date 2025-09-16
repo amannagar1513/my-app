@@ -1,0 +1,212 @@
+/* Import Inter font (if not already in index.html) */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap'); */
+
+.services-container {
+  background: linear-gradient(to right, #d0d5e4, #fbfcff);
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  padding-top: 60px;
+}
+.service-card {
+  background: #2e3a59;
+  
+}
+.service-card {
+  background: rgba(255, 255, 255, 0.2); /* More solid white */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(18px);
+  color: #111827;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+.services-container {
+  background: linear-gradient(135deg,#2a4c99ff); /* Deep blue/gray */
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #e9ecf1;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Service Card Base */
+.service-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(18px);
+  overflow: hidden;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Gradient Glow Background */
+.card-gradient {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, #ecebee, #d5d6d8, #497772, #f43f5e);
+  background-size: 400% 400%;
+  animation: glow 8s ease infinite;
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  filter: blur(80px);
+}
+
+@keyframes glow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Text */
+.service-card h4,
+.service-card p {
+  position: relative;
+  z-index: 2;
+  transition: color 0.5s ease 0.1s;
+}
+
+.service-card h4 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ecf2fa;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #d2d6dc;
+}
+
+/* Hover Effects */
+.service-card:hover .card-gradient {
+  opacity: 0.8;
+}
+
+.service-card:hover h4,
+.service-card:hover p {
+  color: white;
+}
+
+.service-card:hover {
+  transform: rotateX(5deg) rotateY(-5deg) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+/* ===== SSDI Process Section ===== */
+.ssdi-process {
+  color: #ffffff;
+  max-width: 1200px;
+}
+
+.ssdi-process .section-title {
+  color: #ffffff;
+  font-size: 2.5rem;
+}
+
+.process-box {
+  background-color: #f5f3eb;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  color: #1e293b;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-box span {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #9c4221;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.process-box h5 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1f2937;
+}
+
+.process-box p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Hover effect */
+.process-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Image Styling */
+.ssdi-process img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+/* ===== SSDI Process 2x2 Layout ===== */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Reuse existing styles, but ensure they are neat in grid */
+.process-box {
+  background-color: #f5f3eb;
+  border-radius: 12px;
+  padding: 20px;
+  color: #1e293b;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-box span {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #9c4221;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.process-box h5 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1f2937;
+}
+
+.process-box p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Hover effect */
+.process-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Responsive fallback: stack vertically on small screens */
+@media (max-width: 768px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

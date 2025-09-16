@@ -1,0 +1,19 @@
+.hero-section {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  min-height: 100vh;
+  padding: 60px 0;
+}
+
+.text-shadow h1,
+.text-shadow p {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-image {
+  transform: perspective(800px) rotateY(-10deg);
+  transition: transform 0.5s ease;
+}
+
+.hero-image:hover {
+  transform: perspective(800px) rotateY(0deg) scale(1.05);
+}
