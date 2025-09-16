@@ -5,8 +5,8 @@ import Header from './Header';
 import Footer from './Footer';
 import Hero from './Hero';
 import Services from './Services';
-import About from './about';
-import PayPerCall from './paypercall';
+import About from './About';
+import PayPerCall from './PayPerCall';
 import Advertisers from './Advertisers';
 import Publishers from './Publishers';
 import PopupForm from './PopupForm'; // PopupForm import
