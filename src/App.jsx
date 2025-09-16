@@ -1,7 +1,7 @@
 // App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './header';
+import Header from './Header';
 import Footer from './Footer';
 import Hero from './Hero';
 import Services from './Services';
