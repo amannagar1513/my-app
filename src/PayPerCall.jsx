@@ -8,7 +8,7 @@ function PayPerCall() {
       <section
         className="text-white d-flex align-items-center justify-content-center text-center"
         style={{
-          backgroundColor: '#3265bd',
+          backgroundColor: '#4830d2',
           minHeight: '100vh',
           padding: '60px 20px',
         }}

@@ -8,7 +8,7 @@
   padding-top: 60px;
 }
 .service-card {
-  background: #2e3a59;
+  background:#4830d2;
   
 }
 .service-card {
@@ -19,7 +19,7 @@
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 .services-container {
-  background: linear-gradient(135deg,#2a4c99ff); /* Deep blue/gray */
+  background: linear-gradient(135deg,#4830d2, #2525b0); /* Deep blue/gray */
 }
 
 .section-title {

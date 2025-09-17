@@ -7,7 +7,7 @@ function Publishers() {
       {/* 🔹 Section 0: Publisher-Focused Intro */}
       <section
         style={{
-          backgroundColor: '#2a4c99ff',
+          backgroundColor: '#4830d2',
           minHeight: '60vh',
           display: 'flex',
           alignItems: 'center',
