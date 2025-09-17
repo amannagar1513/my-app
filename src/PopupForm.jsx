@@ -1,11 +1,12 @@
 // src/components/PopupForm.jsx
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import emailjs from "emailjs-com";
 import "./PopupForm.css"; // for styling
 
 const PopupForm = () => {
   const [show, setShow] = useState(false);
+  const [status, setStatus] = useState(null);
 
   const { register, handleSubmit, reset } = useForm();
 
@@ -16,21 +17,23 @@ const PopupForm = () => {
     }, 500);
   }, []);
 
-  const onSubmit = async (data) => {
-    try {
-      // You can replace this with your backend API or email service
-      console.log("Form Data:", data);
-
-      // Example API POST (adjust URL)
-      await axios.post("https://your-backend.com/api/submit-form", data);
-
-      alert("Thank you! Form submitted.");
-      reset();
-      setShow(false);
-    } catch (error) {
-      console.error("Submission error", error);
-      alert("Error submitting form.");
-    }
+  const onSubmit = (data) => {
+    emailjs
+      .send(
+        "YOUR_SERVICE_ID",   // from EmailJS
+        "YOUR_TEMPLATE_ID",  // from EmailJS
+        data,
+        "YOUR_PUBLIC_KEY"    // from EmailJS
+      )
+      .then(() => {
+        setStatus("success");
+        reset();
+        setShow(false);
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        setStatus("error");
+      });
   };
 
   if (!show) return null;
@@ -40,6 +43,7 @@ const PopupForm = () => {
       <div className="popup-form">
         <button className="close-btn" onClick={() => setShow(false)}>✕</button>
         <h2>Get Started With Us</h2>
+
         <form onSubmit={handleSubmit(onSubmit)}>
           <input {...register("fullName")} placeholder="Full Name" required />
           <input {...register("email")} type="email" placeholder="Email" required />
@@ -49,20 +53,23 @@ const PopupForm = () => {
 
           <select {...register("service")} required>
             <option value="">Select Service</option>
-            <option value="Consulting">SSDI</option>
-            <option value="Product Demo">Debt Settlement</option>
-            <option value="Sales Inquiry">Health Insurance</option>
-            <option value="Support">Final Expenses</option>
-            <option value="Support">Auto Insurance</option>
-            <option value="Support">Credit Repair</option>
-            <option value="Support">Pay Per Call</option>
-            <option value="Support">Advertisers</option>
-            <option value="Support">Publishers</option>
-            <option value="Support">Media Buying</option>
+            <option value="ssdi">SSDI</option>
+            <option value="debt-settlement">Debt Settlement</option>
+            <option value="health-insurance">Health Insurance</option>
+            <option value="final-expenses">Final Expenses</option>
+            <option value="auto-insurance">Auto Insurance</option>
+            <option value="credit-repair">Credit Repair</option>
+            <option value="pay-per-call">Pay Per Call</option>
+            <option value="advertisers">Advertisers</option>
+            <option value="publishers">Publishers</option>
+            <option value="media-buying">Media Buying</option>
           </select>
 
           <button type="submit">Submit</button>
         </form>
+
+        {status === "success" && <p className="success-msg">✅ Form sent successfully!</p>}
+        {status === "error" && <p className="error-msg">❌ Failed to send. Try again.</p>}
       </div>
     </div>
   );
