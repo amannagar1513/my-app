@@ -16,7 +16,7 @@ function Header() {
         {/* Logo */}
         <div className="d-flex align-items-center">
           <img
-            src="/public/Nexuscore__2_-removebg-preview.png"
+            src="/Nexuscore__2_-removebg-preview.png"
             alt="Company Logo"
             className="me-2"
             style={{ height: '70px' }}
