@@ -49,10 +49,16 @@ const PopupForm = () => {
 
           <select {...register("service")} required>
             <option value="">Select Service</option>
-            <option value="Consulting">Consulting</option>
-            <option value="Product Demo">Product Demo</option>
-            <option value="Sales Inquiry">Sales Inquiry</option>
-            <option value="Support">Support</option>
+            <option value="Consulting">SSDI</option>
+            <option value="Product Demo">Debt Settlement</option>
+            <option value="Sales Inquiry">Health Insurance</option>
+            <option value="Support">Final Expenses</option>
+            <option value="Support">Auto Insurance</option>
+            <option value="Support">Credit Repair</option>
+            <option value="Support">Pay Per Call</option>
+            <option value="Support">Advertisers</option>
+            <option value="Support">Publishers</option>
+            <option value="Support">Media Buying</option>
           </select>
 
           <button type="submit">Submit</button>
