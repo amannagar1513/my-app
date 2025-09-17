@@ -1,7 +1,7 @@
 // src/components/PopupForm.jsx
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser"; // ✅ use the new EmailJS SDK
 import "./PopupForm.css"; // for styling
 
 const PopupForm = () => {
@@ -22,9 +22,9 @@ const PopupForm = () => {
 
     // Make sure these keys match your EmailJS template variables
     const templateParams = {
-      title: "contact",                     // static field
-      name: data.fullName,                  // maps to {{name}} in template
-      time: new Date().toLocaleTimeString(),// dynamic time
+      title: "contact",                      // static field
+      name: data.fullName,                   // maps to {{name}} in template
+      time: new Date().toLocaleTimeString(), // dynamic time
       fullName: data.fullName,
       email: data.email,
       phone: data.phone,
@@ -38,7 +38,7 @@ const PopupForm = () => {
         "service_6wual6a",   // ✅ your EmailJS service ID
         "template_dynww6n",  // ✅ your EmailJS template ID
         templateParams,
-        "DDww6fjgz0X1sUXtz"    // ⚠️ replace with your actual EmailJS public key
+        "DDww6fjgz0X1sUXtz"  // ✅ your EmailJS public key
       )
       .then((response) => {
         console.log("SUCCESS!", response.status, response.text);
