@@ -18,14 +18,30 @@ const PopupForm = () => {
   }, []);
 
   const onSubmit = (data) => {
+    console.log("Form data before sending:", data);
+
+    // Make sure these keys match your EmailJS template variables
+    const templateParams = {
+      title: "contact",                     // static field
+      name: data.fullName,                  // maps to {{name}} in template
+      time: new Date().toLocaleTimeString(),// dynamic time
+      fullName: data.fullName,
+      email: data.email,
+      phone: data.phone,
+      address: data.address,
+      postcode: data.postcode,
+      service: data.service,
+    };
+
     emailjs
       .send(
-        "YOUR_SERVICE_ID",   // from EmailJS
-        "YOUR_TEMPLATE_ID",  // from EmailJS
-        data,
-        "YOUR_PUBLIC_KEY"    // from EmailJS
+        "service_6wual6a",   // ✅ your EmailJS service ID
+        "template_dynww6n",  // ✅ your EmailJS template ID
+        templateParams,
+        "DDww6fjgz0X1sUXtz"    // ⚠️ replace with your actual EmailJS public key
       )
-      .then(() => {
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
         setStatus("success");
         reset();
         setShow(false);
@@ -68,8 +84,12 @@ const PopupForm = () => {
           <button type="submit">Submit</button>
         </form>
 
-        {status === "success" && <p className="success-msg">✅ Form sent successfully!</p>}
-        {status === "error" && <p className="error-msg">❌ Failed to send. Try again.</p>}
+        {status === "success" && (
+          <p className="success-msg">✅ Form sent successfully!</p>
+        )}
+        {status === "error" && (
+          <p className="error-msg">❌ Failed to send. Try again.</p>
+        )}
       </div>
     </div>
   );
