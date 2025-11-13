@@ -39,7 +39,7 @@ function Footer() {
             <h5 className="fw-bold">Office</h5>
             <p>
               H-150 Noida<br />
-              NOIDA 210012
+              NOIDA 210301, Uttar Pradesh,<br />
             </p>
             <p>Email: <a href="mailto:contacts@unicorncallpointmedia.com" className="text-white">hr@nexuscore.com</a></p>
             <p>Phone: <a href="tel:+918240243162" className="text-white">+91 9560720420</a></p>
