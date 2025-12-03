@@ -41,7 +41,7 @@ function Footer() {
               H-150 Noida<br />
               NOIDA 210301, Uttar Pradesh,<br />
             </p>
-            <p>Email: <a href="mailto:contacts@unicorncallpointmedia.com" className="text-white">hr@nexuscore.com</a></p>
+            <p>Email: <a href="mailto:hr@nexuscore.com" className="text-white">hr@nexuscore.com</a></p>
             <p>Phone: <a href="tel:+918240243162" className="text-white">+91 9560720420</a></p>
           </div>
         </div>
