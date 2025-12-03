@@ -2,15 +2,22 @@ import React from 'react';
 import './Services.css';
 
 const services = [
-  { title: 'SSDI', description: 'Legal support for disability benefits' },
+  { title: 'SSDI', description: 'Legal support for disability benefits', link: 'https://www.disablebenefit.com/' },
   { title: 'Health Insurance', description: 'ACA and private health plan access' },
   { title: 'Debt Settlement', description: 'Financial relief via inbound calls' },
   { title: 'Final Expenses', description: 'Peace of mind through final expense coverage' },
   { title: 'Auto Insurance', description: 'Targeted campaigns for higher policy conversions' },
   { title: 'Credit Repair', description: 'Credible help for financial recovery' },
+  { title: 'Flight Booking', description: 'Seamless travel booking solutions', link: 'https://www.easierflightbooking.com/' },
 ];
 
 function Services() {
+  const handleServiceClick = (link) => {
+    if (link) {
+      window.open(link, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <section className="services-container">
       <div className="container py-5">
@@ -19,10 +26,19 @@ function Services() {
         <div className="row">
           {services.map((service, index) => (
             <div className="col-md-6 col-lg-4 mb-4" key={index}>
-              <div className="service-card tilt-card">
+              <div 
+                className={`service-card tilt-card ${service.link ? 'clickable' : ''}`}
+                onClick={() => handleServiceClick(service.link)}
+                style={service.link ? { cursor: 'pointer' } : {}}
+              >
                 <div className="card-gradient"></div>
                 <h4>{service.title}</h4>
                 <p>{service.description}</p>
+                {service.link && (
+                  <div className="learn-more">
+                    Learn More →
+                  </div>
+                )}
               </div>
             </div>
           ))}
