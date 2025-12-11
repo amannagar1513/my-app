@@ -5,3 +5,34 @@ body, html {
 html {
   scroll-behavior: smooth;
 }
+body, html {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Eleven Labs widget wrapper */
+.elevenlabs-widget-wrapper {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 99999;
+  /* Allow pointer interactions */
+  pointer-events: auto;
+}
+
+/* If the widget registers its own <elevenlabs-convai> element, ensure it's on top */
+.elevenlabs-widget-wrapper elevenlabs-convai,
+elevenlabs-convai {
+  z-index: 99999;
+}
+
+/* Mobile tuning */
+@media (max-width: 500px) {
+  .elevenlabs-widget-wrapper {
+    right: 12px;
+    bottom: 12px;
+  }
+}

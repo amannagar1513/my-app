@@ -11,6 +11,8 @@ import Advertisers from './Advertisers.jsx';
 import Publishers from './Publishers.jsx';
 import PopupForm from './PopupForm.jsx'; // PopupForm import
 
+import ElevenLabsWidget from './ElevenLabsWidget.jsx'; // new import
+
 function App() {
   return (
     <Router>
@@ -18,6 +20,9 @@ function App() {
 
       {/* Show PopupForm globally, outside of routes */}
       <PopupForm />
+
+      {/* Eleven Labs Convai Voice Agent — renders globally */}
+      <ElevenLabsWidget />
 
       <Routes>
         <Route path="/" element={<Hero />} />
