@@ -27,7 +27,7 @@ function Header() {
     <>
       <style>{`
         .header-main {
-          background: linear-gradient(135deg, #16145aff 0%, #1a1a2e 50%, #1f225fff 100%);
+          background: linear-gradient(135deg, #16145aff 0%, #14141aff 50%, #1f225fff 100%);
           border-bottom: 1px solid rgba(255, 255, 255, 0.08);
           backdrop-filter: blur(10px);
           transition: all 0.3s ease;
