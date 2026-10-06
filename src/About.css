@@ -99,9 +99,7 @@
   mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
 }
 
-/* ========================================
-   FLOATING PARTICLES
-   ======================================== */
+
 .particles {
   position: fixed;
   top: 0;
